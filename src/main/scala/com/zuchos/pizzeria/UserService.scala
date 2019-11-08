@@ -7,7 +7,7 @@ import UserService._
 
 import scala.collection.mutable
 
-case class Address(line1: String, line2: String, city: String)
+case class Address(line1: String = "", line2: String = "", city: String = "")
 
 case class User(userId: UserId, name: String, address: Address, phoneNumber: String, email: String)
 

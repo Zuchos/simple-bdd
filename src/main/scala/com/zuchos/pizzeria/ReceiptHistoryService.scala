@@ -14,7 +14,7 @@ class ReceiptHistoryService {
     Future.unit
   }
 
-  def find(userId: UserId): Future[List[OrderReceipt]] = {
-    Future.successful(receipts.filter(_._1 == userId).values.toList)
+  def findAll:Future[List[OrderReceipt]] = {
+    Future.successful(receipts.values.toList)
   }
 }

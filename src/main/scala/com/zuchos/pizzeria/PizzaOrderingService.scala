@@ -73,12 +73,12 @@ object PizzaOrderingService {
 
     val Margarita       = 1
     val QuattroStagioni = 2
-    val Havaian         = 3
+    val Havaiian         = 3
 
     def apply(compositionName: String): CompositionId = compositionName match {
       case "Margarita"        => Margarita
       case "Quattro Stagioni" => QuattroStagioni
-      case "Havaian"          => Havaian
+      case "Havaiian"          => Havaiian
     }
   }
 

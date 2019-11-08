@@ -34,7 +34,7 @@ class PizzaOrderingServiceSpec extends FlatSpec with ScalaFutures with EitherVal
     )
 
     //When
-    val orderedItems = List(Pizza(Crust.CheeseFilledCrust, Size.XL, PredefinedComposition(CompositionId.Havaian, List.empty)))
+    val orderedItems = List(Pizza(Crust.CheeseFilledCrust, Size.XL, PredefinedComposition(CompositionId.Havaiian, List.empty)))
     val Right(receipt) = service
       .orderPizza(
         userId,
@@ -50,7 +50,7 @@ class PizzaOrderingServiceSpec extends FlatSpec with ScalaFutures with EitherVal
 
     provider.getUserFunds(userId).futureValue shouldBe (BigDecimal(200.00 - 14.00))
 
-    val usersReceipts = receiptHistoryService.find(userId).futureValue
+    val usersReceipts = receiptHistoryService.findAll.futureValue
 
     usersReceipts should contain only (receipt)
 
